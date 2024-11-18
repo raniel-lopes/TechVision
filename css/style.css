@@ -29,6 +29,17 @@
   background-color: #061D36;
   border-radius: 50%;
   margin-right: 15px;
+
+  /* Centralizando a imagem dentro da bolinha */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo-img {
+  width: 32px;  /* Ajuste conforme o tamanho desejado */
+  height: 30px;
+  object-fit: cover;  /* Garante que a imagem seja exibida proporcionalmente */
 }
 
 .logo-text {
@@ -73,13 +84,16 @@
 }
 
 .background-gradient {
-  width: 100vw;  /* Ocupa 100% da largura da tela */
-  height: calc(100vh - 150px);  /* Ocupa a altura total da tela menos 150px do fundo */
-  flex-shrink: 0;
-  position: absolute;  /* Posicionamento absoluto para cobrir toda a tela */
-  top: 0;
-  left: 0;
-  border-radius: 0px 0px 800px 800px;
-  background: linear-gradient(180deg, rgba(76, 201, 240, 0.00) 0%, rgba(67, 97, 238, 0.30) 100%);
-  z-index: -1;  /* Coloca o fundo atrás de outros elementos */
+  width: 100%; /* Largura total da tela */
+  height: calc(100vh + 150px); /* Altura da tela mais 150px para estender abaixo */
+  position: absolute; /* Posicionamento relativo ao contêiner pai */
+  top: -150px; /* Move o gradiente para cima para compensar a altura extra */
+  left: 0; /* Garantindo alinhamento à esquerda */
+  border-radius: 0 0 800px 800px; /* Raio arredondado na parte inferior */
+  background: linear-gradient(
+    180deg,
+    rgba(76, 201, 240, 0.00) 0%,
+    rgba(67, 97, 238, 0.30) 100%
+  ); /* Gradiente */
+  z-index: -1; /* Envia o gradiente para o fundo */
 }
