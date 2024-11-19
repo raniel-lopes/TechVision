@@ -1,6 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+/* Definindo as variáveis de cores */
+:root {
+  --text-color: #0B090A;
+  --bg-blue: #061D36;
+  --bg-white: white;
+  --active-nav-item: rgba(67, 97, 238, 0.30);
+  --inactive-nav-item: rgba(33, 118, 255, 0);
+  --nav-link-color: #2B2B2B;
+  --text-color-3: #808080;
+}
+
 /* Barra azul (superior) */
 .bg-blue {
-  background-color: #061D36;
+  background-color: var(--bg-blue);
   width: 100%;
   height: 40px;
   flex-shrink: 0;
@@ -8,45 +20,30 @@
 
 /* Barra branca (com logo e nav bar) */
 .bg-white {
-  background-color: white;
+  background-color: var(--bg-white);
   width: 100%;
   height: 80px;
   flex-shrink: 0;
   padding: 0; /* Remove o padding extra */
 }
 
-/* Container que aplica a margem de 160px nas laterais */
-.custom-container {
-  padding-left: 160px;
-  padding-right: 160px;
-  width: 100%; /* Garante que ocupe toda a largura disponível */
-}
-
-/* Estilos para a logo */
+/* Estilos da logo */
 .logo-icon {
+  background-color: var(--bg-blue);
   width: 50px;
   height: 50px;
-  background-color: #061D36;
   border-radius: 50%;
   margin-right: 15px;
-
-  /* Centralizando a imagem dentro da bolinha */
   display: flex;
   justify-content: center;
   align-items: center;
-}
-
-.logo-img {
-  width: 32px;  /* Ajuste conforme o tamanho desejado */
-  height: 30px;
-  object-fit: cover;  /* Garante que a imagem seja exibida proporcionalmente */
 }
 
 .logo-text {
   font-size: 28px;
   font-family: 'Lexend', sans-serif;
   font-weight: 500;
-  color: #061D36;
+  color: var(--bg-blue);
 }
 
 /* Estilos da barra de navegação */
@@ -69,31 +66,73 @@
 
 /* Estilos para o item de navegação ativo (Home) */
 .nav-item.active {
-  background-color: rgba(67, 97, 238, 0.30);
+  background-color: var(--active-nav-item);
 }
 
 /* Estilo para os itens não ativos */
 .nav-item:not(.active) {
-  background-color: rgba(33, 118, 255, 0);
+  background-color: var(--inactive-nav-item);
 }
 
 /* Estilo para os links de navegação */
 .nav-item a {
-  color: #2B2B2B;
+  color: var(--nav-link-color);
   text-decoration: none;
 }
 
+/* Gradiente de Fundo */
 .background-gradient {
-  width: 100%; /* Largura total da tela */
-  height: calc(100vh + 150px); /* Altura da tela mais 150px para estender abaixo */
-  position: absolute; /* Posicionamento relativo ao contêiner pai */
-  top: -150px; /* Move o gradiente para cima para compensar a altura extra */
-  left: 0; /* Garantindo alinhamento à esquerda */
-  border-radius: 0 0 800px 800px; /* Raio arredondado na parte inferior */
-  background: linear-gradient(
-    180deg,
-    rgba(76, 201, 240, 0.00) 0%,
-    rgba(67, 97, 238, 0.30) 100%
-  ); /* Gradiente */
-  z-index: -1; /* Envia o gradiente para o fundo */
+  position: absolute;
+  width: 1440px;
+  height: 902px;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 0 0 800px 800px;
+  background: linear-gradient(180deg, rgba(76, 201, 240, 0) 0%, rgba(67, 97, 238, 0.3) 100%);
+  z-index: -1;
 }
+
+.hero {
+  display: flex; /* Define flexbox para a hero */
+  flex-direction: column; /* Itens organizados em coluna */
+  gap: 40px; /* Define o espaçamento entre os elementos internos */
+  padding-left: 180px; /* Adiciona o espaçamento lateral esquerdo */
+  padding-top: 97px;
+}
+
+.hero-content {
+  max-width: 600px; /* Opcional: limite de largura para conteúdo da hero */
+}
+
+.hero-main {
+  display: flex; /* Torna o carousel e outros elementos flexíveis */
+  flex-direction: row; /* Mantém os elementos em linha no desktop */
+  gap: 40px; /* Espaçamento entre carousel e outros elementos */
+}
+
+
+/* Estilos do H1 */
+h1 {
+  color: var(--text-color);
+  leading-trim: both;
+  text-edge: cap;
+  font-family: 'Poppins', sans-serif;
+  font-size: 57.3px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 65px; /* 113.438% */
+}
+
+/* Estilo para a tag <p> (parágrafos) */
+p {
+  color: var(--text-color-3, #808080); /* Usando a variável de cor com fallback */
+  leading-trim: both;
+  text-edge: cap;
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 26px; /* 162.5% */
+}
+
