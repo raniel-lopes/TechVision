@@ -1,4 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,500&family=Lexend:wght@500&display=swap');
+
 /* Definindo as variáveis de cores */
 :root {
   --text-color: #0B090A;
@@ -24,26 +26,60 @@
   width: 100%;
   height: 80px;
   flex-shrink: 0;
-  padding: 0; /* Remove o padding extra */
+  padding: 0;
+  /* Remove o padding extra */
+}
+
+.custom-container {
+  display: flex;
+  padding-left: 10rem;
+  /* 160px */
+  padding-right: 10rem;
+  /* 160px */
+  width: 100%;
+  box-sizing: border-box;
+  /* Inclui o padding na largura total */
 }
 
 /* Estilos da logo */
 .logo-icon {
   background-color: var(--bg-blue);
   width: 50px;
+  /* Largura do círculo */
   height: 50px;
+  /* Altura do círculo */
   border-radius: 50%;
+  /* Torna o container circular */
   margin-right: 15px;
   display: flex;
   justify-content: center;
   align-items: center;
+  overflow: hidden;
+  /* Garante que a imagem não ultrapasse o limite do círculo */
 }
+
+.logo-img {
+  width: 150%;
+  /* Faz a imagem ocupar toda a largura do círculo */
+  height: 150%;
+  /* Faz a imagem ocupar toda a altura do círculo */
+  object-fit: cover;
+  /* Mantém a proporção da imagem e cobre toda a área sem distorção */
+  object-position: center;
+  /* Garante que a imagem fique centralizada dentro do círculo */
+}
+
 
 .logo-text {
   font-size: 28px;
-  font-family: 'Lexend', sans-serif;
+  text-align: center;
+  font-family: Lexend;
+  font-size: 28px;
+  font-style: normal;
   font-weight: 500;
-  color: var(--bg-blue);
+  line-height: 150%;
+  /* 42px */
+  letter-spacing: -0.28px;
 }
 
 /* Estilos da barra de navegação */
@@ -80,6 +116,27 @@
   text-decoration: none;
 }
 
+/* Remove a borda e altera a cor do ícone do botão */
+/* Remove a borda e a cor de fundo do botão */
+.navbar-toggler {
+  border: none;
+  /* Remove a borda */
+  background-color: transparent;
+  /* Remove a cor de fundo */
+  gap: 10rem;
+}
+
+/* Modifica a cor dos traços do menu burger */
+.navbar-toggler-icon {
+  background-image: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30"%3E%3Cpath stroke="%23061D36" stroke-width="2" d="M5 7h20M5 15h20M5 23h20" /%3E%3C/svg%3E');
+  /* Adiciona a cor desejada aos traços */
+  background-color: transparent;
+  /* Garante que não haja cor de fundo */
+
+}
+
+
+
 /* Gradiente de Fundo */
 .background-gradient {
   position: absolute;
@@ -94,45 +151,74 @@
 }
 
 .hero {
-  display: flex; /* Define flexbox para a hero */
-  flex-direction: column; /* Itens organizados em coluna */
-  gap: 40px; /* Define o espaçamento entre os elementos internos */
-  padding-left: 180px; /* Adiciona o espaçamento lateral esquerdo */
-  padding-top: 97px;
+  display: flex;
+  /* Define flexbox para a hero */
+  flex-direction: column;
+  /* Itens organizados em coluna */
+  /* Define o espaçamento entre os elementos internos */
+  padding-left: 11.2rem;
+  /* Adiciona o espaçamento lateral esquerdo */
+  padding-top: 3.75rem;
+  max-width: 36.25rem;
+  width: 100%;
+  /* Para garantir que a largura seja 100% até o limite de 580px */
 }
 
 .hero-content {
-  max-width: 600px; /* Opcional: limite de largura para conteúdo da hero */
+  max-width: 600px;
+  /* Opcional: limite de largura para conteúdo da hero */
 }
 
 .hero-main {
-  display: flex; /* Torna o carousel e outros elementos flexíveis */
-  flex-direction: row; /* Mantém os elementos em linha no desktop */
-  gap: 40px; /* Espaçamento entre carousel e outros elementos */
+  display: flex;
+  /* Torna o carousel e outros elementos flexíveis */
+  flex-direction: row;
+  /* Mantém os elementos em linha no desktop */
+  gap: 40px;
+  /* Espaçamento entre carousel e outros elementos */
 }
 
 
 /* Estilos do H1 */
 h1 {
   color: var(--text-color);
-  leading-trim: both;
-  text-edge: cap;
   font-family: 'Poppins', sans-serif;
   font-size: 57.3px;
   font-style: normal;
   font-weight: 600;
-  line-height: 65px; /* 113.438% */
+  line-height: 65px;
+  /* 113.438% */
 }
 
 /* Estilo para a tag <p> (parágrafos) */
 p {
-  color: var(--text-color-3, #808080); /* Usando a variável de cor com fallback */
-  leading-trim: both;
-  text-edge: cap;
+  color: var(--text-color-3, #808080);
+  /* Usando a variável de cor com fallback */
+
   font-family: 'Poppins', sans-serif;
   font-size: 16px;
   font-style: normal;
   font-weight: 400;
-  line-height: 26px; /* 162.5% */
+  line-height: 26px;
+  /* 162.5% */
 }
 
+@media (max-width: 768px) {
+
+  /* Define o limite para telas menores */
+  .bg-blue {
+    display: none;
+    /* Oculta a barra azul */
+  }
+
+  .custom-container {
+    padding-left: 2rem;
+    /* Ajuste do padding para telas pequenas */
+    padding-right: 2rem;
+    /* Ajuste do padding para telas pequenas */
+  }
+
+  .logo-container {
+    /* Distância de 185px da logo até o menu burger */
+  }
+}
