@@ -86,7 +86,13 @@
 .navbar-nav {
   display: flex;
   gap: 10px;
+  background-color: white;
 }
+
+.navbar {
+  background-color: transparent !important;
+}
+
 
 /* Estilos para os links de navegação */
 .nav-item {
@@ -197,6 +203,49 @@ p {
   /* 162.5% */
 }
 
+.carousel-container {
+  width: 100%;
+  max-width: 540px;
+  /* Ajuste conforme necessário */
+  margin: 0 auto;
+  /* Para centralizar o carrossel */
+}
+
+.carousel-image {
+  max-height: 340px;
+  /* Define uma altura máxima */
+  object-fit: cover;
+  /* Para garantir que as imagens cubram o espaço sem distorção */
+  width: 100%;
+  /* Garante que a largura das imagens se ajuste ao tamanho do carrossel */
+  border-radius: 20px;
+  /* Aplica borda arredondada nas imagens */
+  /* Sombra para as imagens */
+}
+
+.custom-carousel-image {
+  object-fit: cover;
+  /* Faz a imagem cobrir o espaço sem distorção */
+  object-position: center 20%;
+  /* Ajusta a imagem mais para baixo */
+  max-height: 340px;
+  /* Define a altura máxima */
+  width: 100%;
+  /* Ajusta a largura */
+  border-radius: 20px;
+  /* Bordas arredondadas */
+  /* Sombra */
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+  margin-left: -3rem;
+  /* Espaço à esquerda do botão 'anterior' */
+  margin-right: -3rem;
+  /* Espaço à direita do botão 'próximo' */
+
+}
+
 /* FLEXBOX CONTAINER PARA SECTIONS */
 .sections-container {
   display: flex;
@@ -243,9 +292,6 @@ p {
 h2 {
   color: var(--Primary-Colour, #061D36);
   text-align: center;
-  leading-trim: both;
-  text-edge: cap;
-
   /* H5 - Buttons */
   font-family: Poppins;
   font-size: 16px;
